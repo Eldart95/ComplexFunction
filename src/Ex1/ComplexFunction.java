@@ -84,7 +84,6 @@ public class ComplexFunction implements complex_function {
 	 * Function to calculate the value of complexfunction at x.
 	 */
 	@Override
-	
 	public double f(double x) {
 		switch(this.Sign) {
 		case Plus: return this.left.f(x)+this.right.f(x);
@@ -119,7 +118,7 @@ public class ComplexFunction implements complex_function {
 	 * Takes a string and build an ComplexFunction out of it
 	 */
 		
-	
+	@Override
 	public function initFromString(String ns) { 
 		
 		String s =clearSpaces(ns);
@@ -167,7 +166,7 @@ public class ComplexFunction implements complex_function {
 	/**
 	 * returns a deep copy of a function
 	 */
-
+	@Override
 	public function copy() {
 		
 		function f35 = new ComplexFunction(this.Sign.toString(),this.left,this.right);
@@ -180,6 +179,7 @@ public class ComplexFunction implements complex_function {
 	 * returns true if two functions are logically equal
 	 * 
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		boolean ans = false;
 		function fobj = (function) obj;
@@ -203,7 +203,7 @@ public class ComplexFunction implements complex_function {
 	 * if there isnt than the new function becomes the right one
 	 */
 	
-	
+	@Override
 	public void plus(function f1) {
 		if(this.right!=null) {
 			function new_f = new ComplexFunction(this.Sign.toString(), this.left,this.right);
@@ -219,7 +219,7 @@ public class ComplexFunction implements complex_function {
 	 * if there is right function than this function turns into complexfunction
 	 * if there isnt than the new function becomes the right one
 	 */
-	
+	@Override
 	public void mul(function f1) {
 		if(this.right!=null) {
 			function new_f = new ComplexFunction(this.Sign.toString(), this.left,this.right);
@@ -236,6 +236,7 @@ public class ComplexFunction implements complex_function {
 	 * if there is right function than this function turns into complexfunction
 	 * if there isnt than the new function becomes the right one
 	 */
+	@Override
 	public void div (function f1) {
 		
 		if(this.right!=null) {
@@ -251,7 +252,7 @@ public class ComplexFunction implements complex_function {
 	 * Makes a string out of a complexfunction
 	 */
 
-	
+	@Override
 	public String toString() {
 		String ans="";
 		if(this.Sign==Operation.None) {
